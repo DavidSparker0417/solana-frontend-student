@@ -28,20 +28,20 @@ export class Student {
   ])
 
   serialize(): Buffer {
-    const buffer = new Buffer(1000);
-    this.borshInstructionSchema.encode({...this, variant:0}, buffer)
-    return buffer.slice(0, this.borshInstructionSchema.getSpan(buffer));
+    const buffer = Buffer.alloc(1000)
+    this.borshInstructionSchema.encode({ ...this, variant: 0 }, buffer)
+    return buffer.slice(0, this.borshInstructionSchema.getSpan(buffer))
   }
 
-  static deserialize(buffer: Buffer | undefined) : Student | null {
+  static deserialize(buffer: Buffer | undefined): Student | null {
     if (!buffer) {
       return null
     }
 
     try {
-      const {name, message} = this.borshAccountSchema.decode(buffer)
+      const { name, message } = this.borshAccountSchema.decode(buffer)
       return new Student(name, message)
-    } catch(e) {
+    } catch (e) {
       console.log('Deserialization error: ', e)
       console.log(buffer)
       return null
