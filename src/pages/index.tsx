@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Inter } from "next/font/google";
 import { Box, Center, Heading } from "@chakra-ui/react";
 import styles from "../styles/Home.module.css"
