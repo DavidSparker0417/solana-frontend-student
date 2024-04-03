@@ -6,8 +6,6 @@ import { AppBar } from "@/components/AppBar";
 import { Form } from "@/components/Form";
 import { StudentList } from "@/components/StudentList";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export default function Home() {
   return (
     <div className={styles.App}>

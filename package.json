@@ -11,14 +11,17 @@
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
     "@coral-xyz/borsh": "^0.29.0",
+    "@reduxjs/toolkit": "^2.2.3",
     "@solana/wallet-adapter-react": "^0.15.35",
     "@solana/wallet-adapter-react-ui": "^0.9.35",
     "@solana/wallet-adapter-wallets": "^0.19.32",
     "@solana/web3.js": "^1.91.2",
     "bs58": "^5.0.0",
     "next": "14.1.4",
+    "next-redux-wrapper": "^8.1.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-redux": "^9.1.0"
   },
   "devDependencies": {
     "@types/node": "^20",

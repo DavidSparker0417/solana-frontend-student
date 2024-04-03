@@ -5,17 +5,20 @@ import { useConnection } from "@solana/wallet-adapter-react";
 import * as web3 from "@solana/web3.js"
 import { StudentCoordinator } from "@/Coordinator/StudentCoordinator";
 import { Button, Center, HStack, Input, Spacer } from "@chakra-ui/react";
+import { getTransactionCount } from "@/redux/transactionSlice";
+import { useSelector } from "react-redux";
 
 export const StudentList: FC = () => {
   const [students, setStudents] = useState<Student[]>([])
   const { connection } = useConnection()
   const [page, setPage] = useState(1)
   const [search, setSearch] = useState('')
+  const transactionCount = useSelector(getTransactionCount);
 
   useEffect(() => {
     StudentCoordinator.fetchPage(connection, page, 10, search, search !== '')
       .then(students => setStudents(students))
-  }, [search, page])
+  }, [search, page, transactionCount])
 
   return (
     <div>

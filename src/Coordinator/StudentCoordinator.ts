@@ -1,8 +1,8 @@
+import { STUDENT_PROGRAM_ID } from "@/constants/web3";
 import { Student } from "@/models/Student";
 import * as web3 from "@solana/web3.js"
 import bs58 from "bs58"
 
-const STUDENT_PROGRAM_ID = "HdE95RSVsdb315jfJtaykXhXY478h53X6okDupVfY9yf"
 export class StudentCoordinator {
   static accounts: web3.PublicKey[] = []
 
